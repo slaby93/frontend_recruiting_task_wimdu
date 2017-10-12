@@ -10,21 +10,21 @@ const defaultState = {
 
 const reducer = handleActions({
     [FETCH_USERS_REQUEST]: (state, action) => {
-        return Object.assign(state, {
+        return Object.assign({}, state, {
             isRequesting: true,
             users: null,
             error: null
         });
     },
     [FETCH_USERS_SUCCESS]: (state, { payload: { users } }) => {
-        return Object.assign(state, {
+        return Object.assign({}, state, {
             isRequesting: false,
             users,
             error: null
         });
     },
     [FETCH_USERS_FAILURE]: (state, action) => {
-        return Object.assign(state, {
+        return Object.assign({}, state, {
             isRequesting: false,
             users: null,
             error: 'Error during data fetch'

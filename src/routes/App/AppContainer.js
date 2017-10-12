@@ -7,10 +7,14 @@ const AppContainer = (props) => {
   return <App {...props} />
 }
 
-const mapStateToProps = () => {
-  return {
+const mapStateToProps = ({ users }) => {
+  const isRequesting = users.isRequesting;
 
+  if (isRequesting) {
+    return { isRequesting }
   }
+
+  return users
 }
 
 const mapDispatchToProps = (dispatch) => {
