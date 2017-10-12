@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled from 'styled-components';
+import { Provider } from 'react-redux';
+import store from './store';
+import * as a from './store';
+import App from './routes/App';
 
-const App = ({ className }) => {
-  return <div className="test">
-    <span className="dupa">Test</span>
-  </div>;
-}
-
-const StyledComponent = styled(App) `
-  background-color: green;
-`;
-
-ReactDOM.render(<StyledComponent />, document.getElementById('app'));
+ReactDOM.render(<Provider store={store}>
+  <App />
+</Provider>, document.getElementById('app'));
