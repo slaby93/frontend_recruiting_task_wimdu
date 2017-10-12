@@ -2,11 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux';
 import Button from './../../components/Button'
 
-const App = ({ fetchUsers, isRequesting }) => {
+const App = () => {
   return (<div>
-    {isRequesting && <span>Loading ...</span>}
-    {!isRequesting && <Button onClick={fetchUsers}>Fetch users</Button>}
-
+    <Button>Fetch users</Button>
   </div>);
 }
 

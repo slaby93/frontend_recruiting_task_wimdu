@@ -7,16 +7,6 @@ const AppContainer = (props) => {
   return <App {...props} />
 }
 
-const mapStateToProps = ({ users }) => {
-  const isRequesting = users.isRequesting;
-
-  if (isRequesting) {
-    return { isRequesting }
-  }
-
-  return users
-}
-
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUsers: () => {
@@ -25,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppContainer);
+export default connect(null, mapDispatchToProps)(AppContainer);
