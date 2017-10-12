@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import Button from './../../components/Button'
 
-const App = ({ testSaga }) => {
+const App = ({ fetchUsers }) => {
   return (<div>
-    <button onClick={testSaga}>TEST SAGA</button>
+    <Button onClick={fetchUsers}>Fetch users</Button>
   </div>);
 }
 

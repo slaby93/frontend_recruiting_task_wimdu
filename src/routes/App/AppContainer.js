@@ -1,7 +1,7 @@
 import React from 'react';
 import App from './App'
 import { connect } from 'react-redux'
-import { TEST } from './../../reducers/test'
+import { FETCH_USERS_REQUEST } from './../../reducers/users'
 
 const AppContainer = (props) => {
   return <App {...props} />
@@ -9,14 +9,14 @@ const AppContainer = (props) => {
 
 const mapStateToProps = () => {
   return {
-    a: 1
+
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    testSaga: () => {
-      dispatch(TEST());
+    fetchUsers: () => {
+      dispatch(FETCH_USERS_REQUEST());
     }
   }
 }
